@@ -1,0 +1,8 @@
+#!/bin/bash
+
+alias ls='ls --color=auto --group-directories-first'
+
+#function todo() {
+ #echo "- [ ] $1" >> ~/Desktop/todo.md
+ ## echo "$1"
+#}
