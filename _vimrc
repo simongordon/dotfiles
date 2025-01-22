@@ -74,6 +74,10 @@ else
     "noremap <leader><leader> :NERDTreeToggle<ENTER>
 endif
 
+function! SetupInitial()
+    !echo "source ~/sg_config/_vimrc" > ~/_vimrc
+    !echo "source ~/sg_config/_vimrc" > ~/_ideavimrc
+endfunction
 
 ""--- Actions ---
 ""$Copy                                              <M-C>
