@@ -7,7 +7,7 @@ set hlsearch
 set ignorecase
 
 noremap <leader>h :noh<ENTER>
-noremap <leader>ve :e ~/_vimrc<ENTER>
+noremap <leader>ve :e ~/sg_config/_vimrc<ENTER>
 noremap <leader>ln :set rnu!<ENTER>
 
 if has('ide')
@@ -60,18 +60,21 @@ else
     set listchars=tab:>-
     set listchars+=tab:>-,space:.
 
+    noremap <leader>gb :action Annotate<ENTER>
+
     if exists('plug')
         call plug#begin()
             Plug 'preservim/nerdtree'
         call plug#end()
+        noremap <leader>fe :NERDTreeToggle<ENTER>
     end
 
     colorscheme habamax
 
     "noremap <leader>gf :e <cfile><cr>
 
-    noremap <leader>fe :NERDTreeToggle<ENTER>
     "noremap <leader><leader> :NERDTreeToggle<ENTER>
+    set splitbelow
 endif
 
 function! SetupInitial()
