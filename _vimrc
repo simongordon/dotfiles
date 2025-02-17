@@ -55,14 +55,12 @@ else
     set expandtab
     set autoindent
 
-    " set list
+    set list
     " set list!
     set listchars=tab:>-
     set listchars+=tab:>-,space:.
 
-    noremap <leader>gb :action Annotate<ENTER>
-
-    if exists('plug')
+    if ! empty(globpath(&rtp, 'autoload/plug.vim'))
         call plug#begin()
             Plug 'preservim/nerdtree'
         call plug#end()
@@ -73,13 +71,14 @@ else
 
     "noremap <leader>gf :e <cfile><cr>
 
-    "noremap <leader><leader> :NERDTreeToggle<ENTER>
     set splitbelow
+    set mouse=a
 endif
 
 function! SetupInitial()
     !echo "source ~/sg_config/_vimrc" > ~/_vimrc
     !echo "source ~/sg_config/_vimrc" > ~/_ideavimrc
+    !echo "source ~/sg_config/_bash_aliases" >> ~/.bash_aliases
 endfunction
 
 ""--- Actions ---
