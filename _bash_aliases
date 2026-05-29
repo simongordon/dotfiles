@@ -1,8 +1,45 @@
 #!/bin/bash
 
 alias ls='ls --color=auto --group-directories-first'
+alias pico8='~/tools/pico-8/pico8'
+alias splore='~/tools/pico-8/pico8 -splore'
+alias mgba='~/tools/mGBA-0.10.4-appimage-x64.appimage'
+alias mgba-qt='~/tools/mGBA-0.10.4-appimage-x64.appimage'
+
+function todo() {
+    echo "- [ ] $1" >> ~/Desktop/todo.md
+    # echo "$1"
+}
 
 #function todo() {
- #echo "- [ ] $1" >> ~/Desktop/todo.md
- ## echo "$1"
+#echo "- [ ] $1" >> ~/Desktop/todo.md
+## echo "$1"
 #}
+#
+#
+move_and_symlink() {
+    mv "$1" "$2"
+    ln -s "${2%/}/$1" .
+    #ln -s "$2" "$1"
+}
+
+mv_sl() {
+    src=$(realpath $1)
+    destination=$(realpath $2)
+    #mv "$1" "$2" && ln -s "${2%/}/$1" .
+    #mv "$1" "$2" && ln -s "$2" "$1"
+    mv "$src" "$destination" && ln -s "$destination" "${src%/}"
+}
+
+backup_repo() {
+    src=$(realpath $1)
+    base_name=$(basename $1)
+    new_directory="$HOME/repos/${base_name}"
+    #mv "$1" "$HOME/repos"  && ln -s "$new_directory" "$1"
+    # mv "$1" "$2" && ln -s "${2%/}/$1" .
+    # mv_sl "$1" "$new_directory"
+    #mv "$1" "$HOME/repos" && ln -s "${new_directory}" .
+    mv_sl $src $new_directory
+
+}
+
