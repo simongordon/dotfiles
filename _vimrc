@@ -52,6 +52,7 @@ if has('ide')
 else
     set tabstop=4
     set shiftwidth=4
+    set softtabstop=4
     set expandtab
     set autoindent
 
@@ -62,7 +63,9 @@ else
 
     if ! empty(globpath(&rtp, 'autoload/plug.vim'))
         call plug#begin()
-            Plug 'preservim/nerdtree'
+        Plug 'preservim/nerdtree'
+        Plug 'rust-lang/rust.vim'
+        Plug 'dense-analysis/ale'
         call plug#end()
         noremap <leader>fe :NERDTreeToggle<ENTER>
     end
@@ -73,6 +76,8 @@ else
 
     set splitbelow
     set mouse=a
+
+    nnoremap <leader>lt :colo morning<ENTER>
 endif
 
 function! SetupInitial()
