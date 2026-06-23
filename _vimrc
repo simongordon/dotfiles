@@ -59,7 +59,8 @@ else
     set list
     " set list!
     set listchars=tab:>-
-    set listchars+=tab:>-,space:.
+    set listchars+=trail:.
+    "set listchars+=tab:>-,space:.
 
     if ! empty(globpath(&rtp, 'autoload/plug.vim'))
         call plug#begin()

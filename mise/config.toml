@@ -1,0 +1,7 @@
+[settings]
+disable_backends = ["asdf", "vfox"]
+lockfile = true
+
+[env]
+GOPATH = "/home/simon/.cache/go"
+GRADLE_USER_HOME = "/home/simon/.cache/.gradle"
